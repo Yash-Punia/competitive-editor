@@ -1,0 +1,21 @@
+{
+  "name": "competitive-editor",
+  "version": "1.0.0",
+  "description": "A text editor for quick competitive programming in various languages",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . competitive-editor --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"C++ Competitive Editor\"",
+    "package-linux": "electron-packager . competitive-editor --overwrite --asar=true --platform=linux --arch=x64 --executableName=competitive-editor --icon=icon.png --prune=true --out=release-builds",
+    "create-debian-installer": "electron-installer-debian --src release-builds/competitive-editor-linux-x64/ --arch amd64 --config debian.json"  
+  },
+  "author": "Yash Punia",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^9.1.2"
+  },
+  "devDependencies": {
+    "electron-installer-debian": "^3.1.0",
+    "electron-packager": "^15.0.0"
+  }
+}
